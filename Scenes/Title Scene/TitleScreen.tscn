@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cy7dvo41awosy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.572549, 0.686275, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 152.0
+offset_right = 788.0
+offset_bottom = 255.0
+theme_override_font_sizes/font_size = 75
+text = "Placeholder"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 272.0
+offset_right = 672.0
+offset_bottom = 336.0
+text = "Start"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 360.0
+offset_right = 672.0
+offset_bottom = 424.0
+text = "Save Select"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 448.0
+offset_right = 672.0
+offset_bottom = 512.0
+text = "Options"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 536.0
+offset_right = 672.0
+offset_bottom = 600.0
+text = "Close"
