@@ -25,22 +25,21 @@ offset_right = 640.0
 offset_bottom = 576.0
 text = "Main Menu"
 
-[node name="Resolution" type="Label" parent="."]
-layout_mode = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
 offset_left = 64.0
-offset_top = 64.0
-offset_right = 256.0
+offset_top = 56.0
+offset_right = 768.0
 offset_bottom = 128.0
+
+[node name="Resolution" type="Label" parent="HBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Window Mode:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Res-OptionButton" type="OptionButton" parent="."]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 64.0
-offset_right = 552.0
-offset_bottom = 128.0
+[node name="Res-OptionButton" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
