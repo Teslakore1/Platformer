@@ -32,7 +32,6 @@ clip_tabs = false
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 1
 tab_alignment = 1
 
 [node name="Window Mode" type="Label" parent="TabContainer/Graphics"]
