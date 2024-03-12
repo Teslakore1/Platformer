@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy7dvo41awosy"]
 
-[ext_resource type="Script" path="res://Scenes/1 Title Menus/Title Menu/TitleScreen.gd" id="1_ss24l"]
+[ext_resource type="Script" path="res://Scenes/1 Title Menus/Title Menu/Scripts/TitleScreen.gd" id="1_ss24l"]
 [ext_resource type="PackedScene" uid="uid://d3bjdruq6wn6s" path="res://Scenes/1 Title Menus/Options Menu/Options_Menu.tscn" id="2_weie3"]
 [ext_resource type="PackedScene" uid="uid://dsjdixvx5kbuu" path="res://Scenes/1 Title Menus/Game Saves Menu/Game_Saves.tscn" id="3_5sqmr"]
 

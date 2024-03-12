@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3bjdruq6wn6s"]
+[gd_scene load_steps=4 format=3 uid="uid://d3bjdruq6wn6s"]
 
-[ext_resource type="Script" path="res://Scenes/1 Title Menus/Options Menu/Options_Menu.gd" id="1_0235h"]
+[ext_resource type="Script" path="res://Scenes/1 Title Menus/Options Menu/Scripts/Options_Menu.gd" id="1_0235h"]
+[ext_resource type="Script" path="res://Scenes/1 Title Menus/Options Menu/Scripts/WM-OptionButton.gd" id="2_0xms5"]
+[ext_resource type="Script" path="res://Scenes/1 Title Menus/Options Menu/Scripts/Res-OptionButton.gd" id="2_s4oqc"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -20,26 +22,47 @@ color = Color(0.247059, 0.247059, 0.247059, 1)
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 512.0
-offset_top = 448.0
+offset_top = 544.0
 offset_right = 640.0
 offset_bottom = 576.0
 text = "Main Menu"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Window Mode" type="Label" parent="."]
 layout_mode = 2
-offset_left = 64.0
-offset_top = 56.0
-offset_right = 768.0
-offset_bottom = 128.0
-
-[node name="Resolution" type="Label" parent="HBoxContainer"]
-layout_mode = 2
+offset_left = 80.0
+offset_top = 88.0
+offset_right = 295.0
+offset_bottom = 130.0
 theme_override_font_sizes/font_size = 30
 text = "Window Mode:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Res-OptionButton" type="OptionButton" parent="HBoxContainer"]
+[node name="WM-OptionButton" type="OptionButton" parent="."]
 layout_mode = 2
+offset_left = 320.0
+offset_top = 96.0
+offset_right = 512.0
+offset_bottom = 128.0
+script = ExtResource("2_0xms5")
+
+[node name="Resolution" type="Label" parent="."]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 152.0
+offset_right = 295.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 30
+text = "Resolution:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Res-OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+offset_left = 320.0
+offset_top = 160.0
+offset_right = 512.0
+offset_bottom = 192.0
+script = ExtResource("2_s4oqc")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
