@@ -13,3 +13,9 @@ config_version=5
 config/name="Platformer"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/Art/icon.svg"
+
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/stretch/mode="viewport"

@@ -15,49 +15,53 @@ script = ExtResource("1_ss24l")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 2560.0
+offset_bottom = 1440.0
 color = Color(0.572549, 0.686275, 1, 1)
 
 [node name="Game Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 152.0
-offset_right = 788.0
-offset_bottom = 255.0
-theme_override_font_sizes/font_size = 75
+offset_left = 776.0
+offset_top = 208.0
+offset_right = 1916.0
+offset_bottom = 481.0
+theme_override_font_sizes/font_size = 200
 text = "Placeholder"
 
 [node name="Start Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 272.0
-offset_right = 672.0
-offset_bottom = 336.0
+offset_left = 1088.0
+offset_top = 584.0
+offset_right = 1600.0
+offset_bottom = 695.0
+theme_override_font_sizes/font_size = 75
 text = "Start"
 
 [node name="Save Select Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 360.0
-offset_right = 672.0
-offset_bottom = 424.0
+offset_left = 1088.0
+offset_top = 712.0
+offset_right = 1600.0
+offset_bottom = 823.0
+theme_override_font_sizes/font_size = 75
 text = "Save Select"
 
 [node name="Options Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 448.0
-offset_right = 672.0
-offset_bottom = 512.0
+offset_left = 1088.0
+offset_top = 840.0
+offset_right = 1600.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 75
 text = "Options"
 
 [node name="Close Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 480.0
-offset_top = 536.0
-offset_right = 672.0
-offset_bottom = 600.0
+offset_left = 1088.0
+offset_top = 968.0
+offset_right = 1600.0
+offset_bottom = 1079.0
+theme_override_font_sizes/font_size = 75
 text = "Close"
 
 [node name="OptionsMenu" parent="." instance=ExtResource("2_weie3")]

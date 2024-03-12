@@ -15,54 +15,88 @@ script = ExtResource("1_0235h")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 2560.0
+offset_bottom = 1440.0
 color = Color(0.247059, 0.247059, 0.247059, 1)
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 512.0
-offset_top = 544.0
-offset_right = 640.0
-offset_bottom = 576.0
-text = "Main Menu"
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+tab_alignment = 1
 
-[node name="Window Mode" type="Label" parent="."]
+[node name="Graphics" type="TabBar" parent="TabContainer"]
 layout_mode = 2
-offset_left = 80.0
-offset_top = 88.0
-offset_right = 295.0
-offset_bottom = 130.0
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 1
+tab_alignment = 1
+
+[node name="Window Mode" type="Label" parent="TabContainer/Graphics"]
+layout_mode = 2
+offset_left = 56.0
+offset_top = 121.0
+offset_right = 595.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 75
 text = "Window Mode:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WM-OptionButton" type="OptionButton" parent="."]
+[node name="WM-OptionButton" type="OptionButton" parent="TabContainer/Graphics"]
 layout_mode = 2
-offset_left = 320.0
-offset_top = 96.0
-offset_right = 512.0
-offset_bottom = 128.0
+offset_left = 640.0
+offset_top = 153.0
+offset_right = 960.0
+offset_bottom = 224.0
 script = ExtResource("2_0xms5")
 
-[node name="Resolution" type="Label" parent="."]
+[node name="Resolution" type="Label" parent="TabContainer/Graphics"]
 layout_mode = 2
-offset_left = 80.0
-offset_top = 152.0
-offset_right = 295.0
-offset_bottom = 194.0
-theme_override_font_sizes/font_size = 30
+offset_left = 56.0
+offset_top = 257.0
+offset_right = 464.0
+offset_bottom = 360.0
+theme_override_font_sizes/font_size = 75
 text = "Resolution:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Res-OptionButton" type="OptionButton" parent="."]
+[node name="Res-OptionButton" type="OptionButton" parent="TabContainer/Graphics"]
 layout_mode = 2
-offset_left = 320.0
-offset_top = 160.0
-offset_right = 512.0
-offset_bottom = 192.0
+offset_left = 640.0
+offset_top = 289.0
+offset_right = 960.0
+offset_bottom = 353.0
 script = ExtResource("2_s4oqc")
+
+[node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+tab_alignment = 1
+
+[node name="Gameplay" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+tab_alignment = 1
+
+[node name="Accesibility" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+tab_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 1280.0
+offset_right = 1489.0
+offset_bottom = 1391.0
+theme_override_font_sizes/font_size = 75
+text = "Main Menu"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
