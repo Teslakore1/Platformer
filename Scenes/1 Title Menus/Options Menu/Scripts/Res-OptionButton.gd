@@ -3,6 +3,16 @@ extends OptionButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_items()
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func add_items():
+	$".".add_item("2560x1440")
 	$".".add_item("1920x1080")
 	$".".add_item("1366x768")
 	$".".add_item("1280x1024")
@@ -13,7 +23,6 @@ func _ready():
 	$".".add_item("1024x768")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
+func _on_item_selected(index):
+	pass # Replace with function body.
