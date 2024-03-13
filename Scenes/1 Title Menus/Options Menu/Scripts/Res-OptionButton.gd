@@ -25,4 +25,23 @@ func add_items():
 
 
 func _on_item_selected(index):
-	pass # Replace with function body.
+	var current_selected = index
+	
+	if current_selected == 0:
+		DisplayServer.window_set_size(Vector2(2560,1440))
+	if current_selected == 1:
+		DisplayServer.window_set_size(Vector2(1920,1080))
+	if current_selected == 2:
+		DisplayServer.window_set_size(Vector2(1366,768))
+	if current_selected == 3:
+		DisplayServer.window_set_size(Vector2(1280,1024))
+	if current_selected == 4:
+		DisplayServer.window_set_size(Vector2(1440,900))
+	if current_selected == 5:
+		DisplayServer.window_set_size(Vector2(1600,900))
+	if current_selected == 6:
+		DisplayServer.window_set_size(Vector2(1680,1050))
+	if current_selected == 7:
+		DisplayServer.window_set_size(Vector2(1280,800))
+	if current_selected == 8:
+		DisplayServer.window_set_size(Vector2(1024,768))
