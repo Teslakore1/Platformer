@@ -33,43 +33,67 @@ tab_alignment = 1
 layout_mode = 2
 tab_alignment = 1
 
-[node name="Window Mode" type="Label" parent="TabContainer/Graphics"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 200
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Graphics/MarginContainer"]
 layout_mode = 2
-offset_left = 56.0
-offset_top = 121.0
-offset_right = 595.0
-offset_bottom = 224.0
+columns = 2
+
+[node name="Window Mode" type="Label" parent="TabContainer/Graphics/MarginContainer/GridContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "Window Mode:"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WM-OptionButton" type="OptionButton" parent="TabContainer/Graphics"]
+[node name="WM-OptionButton" type="OptionButton" parent="TabContainer/Graphics/MarginContainer/GridContainer"]
 layout_mode = 2
-offset_left = 640.0
-offset_top = 153.0
-offset_right = 960.0
-offset_bottom = 224.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
 script = ExtResource("2_0xms5")
 
-[node name="Resolution" type="Label" parent="TabContainer/Graphics"]
+[node name="Resolution" type="Label" parent="TabContainer/Graphics/MarginContainer/GridContainer"]
 layout_mode = 2
-offset_left = 56.0
-offset_top = 257.0
-offset_right = 464.0
-offset_bottom = 360.0
 theme_override_font_sizes/font_size = 75
 text = "Resolution:"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Res-OptionButton" type="OptionButton" parent="TabContainer/Graphics"]
+[node name="Res-OptionButton" type="OptionButton" parent="TabContainer/Graphics/MarginContainer/GridContainer"]
 layout_mode = 2
-offset_left = 640.0
-offset_top = 289.0
-offset_right = 960.0
-offset_bottom = 353.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
 script = ExtResource("2_s4oqc")
+
+[node name="Vsync" type="Label" parent="TabContainer/Graphics/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Vsync:"
+vertical_alignment = 1
+
+[node name="Vsync CheckButton" type="CheckButton" parent="TabContainer/Graphics/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Display FPS" type="Label" parent="TabContainer/Graphics/MarginContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Display FPS:"
+vertical_alignment = 1
+
+[node name="FPs CheckButton" type="CheckButton" parent="TabContainer/Graphics/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
 visible = false
@@ -101,6 +125,6 @@ offset_bottom = 1391.0
 theme_override_font_sizes/font_size = 75
 text = "Main Menu"
 
-[connection signal="item_selected" from="TabContainer/Graphics/WM-OptionButton" to="TabContainer/Graphics/WM-OptionButton" method="_on_item_selected"]
-[connection signal="item_selected" from="TabContainer/Graphics/Res-OptionButton" to="TabContainer/Graphics/Res-OptionButton" method="_on_item_selected"]
+[connection signal="item_selected" from="TabContainer/Graphics/MarginContainer/GridContainer/WM-OptionButton" to="TabContainer/Graphics/MarginContainer/GridContainer/WM-OptionButton" method="_on_item_selected"]
+[connection signal="item_selected" from="TabContainer/Graphics/MarginContainer/GridContainer/Res-OptionButton" to="TabContainer/Graphics/MarginContainer/GridContainer/Res-OptionButton" method="_on_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
