@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3bjdruq6wn6s"]
+[gd_scene load_steps=5 format=3 uid="uid://d3bjdruq6wn6s"]
 
 [ext_resource type="Script" path="res://Scenes/1 Title Menus/Options Menu/Scripts/Options_Menu.gd" id="1_0235h"]
 [ext_resource type="Script" path="res://Scenes/1 Title Menus/Options Menu/Scripts/WM-OptionButton.gd" id="2_0xms5"]
 [ext_resource type="Script" path="res://Scenes/1 Title Menus/Options Menu/Scripts/Res-OptionButton.gd" id="2_s4oqc"]
+[ext_resource type="Script" path="res://Scenes/1 Title Menus/Options Menu/Master Bar.gd" id="4_lxqmk"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -22,8 +23,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 tab_alignment = 1
+current_tab = 1
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 tab_alignment = 1
 
@@ -91,7 +94,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 1
 tab_alignment = 1
@@ -125,6 +127,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 50
 columns = 3
+script = ExtResource("4_lxqmk")
 
 [node name="Decrease" type="Button" parent="TabContainer/Audio/MarginContainer/GridContainer/Master Bar"]
 clip_contents = true
@@ -133,11 +136,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "-"
 
-[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Audio/MarginContainer/GridContainer/Master Bar"]
+[node name="MasterProgressBar" type="ProgressBar" parent="TabContainer/Audio/MarginContainer/GridContainer/Master Bar"]
 clip_contents = true
 custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+step = 1.0
+value = 50.0
 
 [node name="Increase" type="Button" parent="TabContainer/Audio/MarginContainer/GridContainer/Master Bar"]
 clip_contents = true
@@ -168,6 +173,7 @@ clip_contents = true
 custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+value = 50.0
 
 [node name="Increase" type="Button" parent="TabContainer/Audio/MarginContainer/GridContainer/Music Bar"]
 clip_contents = true
@@ -198,6 +204,7 @@ clip_contents = true
 custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+value = 50.0
 
 [node name="Increase" type="Button" parent="TabContainer/Audio/MarginContainer/GridContainer/SFX Bar"]
 clip_contents = true
@@ -243,4 +250,8 @@ text = "Main Menu"
 [connection signal="item_selected" from="TabContainer/Graphics/MarginContainer/GridContainer/Res-OptionButton" to="TabContainer/Graphics/MarginContainer/GridContainer/Res-OptionButton" method="_on_item_selected"]
 [connection signal="pressed" from="TabContainer/Graphics/MarginContainer/GridContainer/Vsync CheckButton" to="." method="_on_vsync_check_button_pressed"]
 [connection signal="pressed" from="TabContainer/Graphics/MarginContainer/GridContainer/FPS CheckButton" to="." method="_on_fps_check_button_pressed"]
+[connection signal="button_down" from="TabContainer/Audio/MarginContainer/GridContainer/Master Bar/Decrease" to="TabContainer/Audio/MarginContainer/GridContainer/Master Bar" method="_on_decrease_button_down"]
+[connection signal="button_up" from="TabContainer/Audio/MarginContainer/GridContainer/Master Bar/Decrease" to="TabContainer/Audio/MarginContainer/GridContainer/Master Bar" method="_on_decrease_button_up"]
+[connection signal="value_changed" from="TabContainer/Audio/MarginContainer/GridContainer/Master Bar/MasterProgressBar" to="TabContainer/Audio/MarginContainer/GridContainer/Master Bar" method="_on_progress_bar_value_changed"]
+[connection signal="pressed" from="TabContainer/Audio/MarginContainer/GridContainer/Master Bar/Increase" to="TabContainer/Audio/MarginContainer/GridContainer/Master Bar" method="_on_increase_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
