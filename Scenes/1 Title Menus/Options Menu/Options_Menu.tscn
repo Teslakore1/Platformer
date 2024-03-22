@@ -141,8 +141,9 @@ clip_contents = true
 custom_minimum_size = Vector2(1000, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+min_value = -30.0
+max_value = 30.0
 step = 1.0
-value = 50.0
 
 [node name="Increase" type="Button" parent="TabContainer/Audio/MarginContainer/GridContainer/Master Bar"]
 clip_contents = true

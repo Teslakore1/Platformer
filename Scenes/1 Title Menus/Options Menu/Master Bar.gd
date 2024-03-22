@@ -1,7 +1,6 @@
 extends GridContainer
 
-var increasing = false
-var decreasing = false
+var master_bus = AudioServer.get_bus_index("Master")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +18,7 @@ func _on_decrease_pressed():
 
 
 func _on_progress_bar_value_changed(value):
-	pass # Replace with function body.
+	AudioServer.set_bus_volume_db(master_bus, value)
 
 
 func _on_increase_pressed():

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy7dvo41awosy"]
+[gd_scene load_steps=5 format=3 uid="uid://cy7dvo41awosy"]
 
 [ext_resource type="Script" path="res://Scenes/1 Title Menus/Title Menu/Scripts/TitleScreen.gd" id="1_ss24l"]
 [ext_resource type="PackedScene" uid="uid://d3bjdruq6wn6s" path="res://Scenes/1 Title Menus/Options Menu/Options_Menu.tscn" id="2_weie3"]
 [ext_resource type="PackedScene" uid="uid://dsjdixvx5kbuu" path="res://Scenes/1 Title Menus/Game Saves Menu/Game_Saves.tscn" id="3_5sqmr"]
+[ext_resource type="AudioStream" uid="uid://bh3yjlo8ikdqw" path="res://Assets/02 Satellite.mp3" id="4_2gdmi"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -74,6 +75,11 @@ text = "Options"
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 text = "Close"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2gdmi")
+autoplay = true
+mix_target = 1
 
 [connection signal="pressed" from="Button Container/Save Select Button" to="." method="_on_save_select_button_pressed"]
 [connection signal="pressed" from="Button Container/Options Button" to="." method="_on_options_button_pressed"]
