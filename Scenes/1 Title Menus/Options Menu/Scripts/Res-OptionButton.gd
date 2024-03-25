@@ -12,8 +12,8 @@ func _process(delta):
 	pass
 
 func add_items():
-	$".".add_item("1920x1080")
 	$".".add_item("2560x1440")
+	$".".add_item("1920x1080")
 	$".".add_item("1366x768")
 	$".".add_item("1280x1024")
 	$".".add_item("1440x900")
@@ -28,9 +28,9 @@ func _on_item_selected(index):
 	var current_selected = index
 	
 	if current_selected == 0:
-		DisplayServer.window_set_size(Vector2(1920,1080))
-	if current_selected == 1:
 		DisplayServer.window_set_size(Vector2(2560,1440))
+	if current_selected == 1:
+		DisplayServer.window_set_size(Vector2(1920,1080))
 	if current_selected == 2:
 		DisplayServer.window_set_size(Vector2(1366,768))
 	if current_selected == 3:
